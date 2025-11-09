@@ -1,4 +1,4 @@
-# Arch Linux Post-Install Setup Script
+# Starch (Start Arch) - Arch post-install script.
 
 A comprehensive automated setup script for Arch Linux that transforms a minimal installation into a fully-featured Hyprland-based desktop environment with all essential applications and configurations.
 
