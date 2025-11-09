@@ -1,0 +1,36 @@
+Super + Return - Launch the terminal.
+Super + Q - Kill the active window.
+Super + L - Move the window focus to the right. 
+Super + H - Move the window focus to the left. 
+Super + K - Move the window focus upward. 
+Super + J - Move the window focus downward. 
+Super + M - Log out of the session.
+Shift + E - Launch the TUI file manager.
+Shift + A - Launches Audio settings.
+Super + Shift + E - Launch the GUI file manager.
+Super + B - Launch the browser.
+Super + X - Launch Xournal++ (hand note-taking app).
+Super + F - Toggle fullscreen.
+Super + Shift + F - Toggle floating.
+Super + D - Launch app launcher(menu).
+Super + P - Toggle between the master and dwindle tiling mode.
+Super + V - Change the window split direction.
+Print - Take a screenshot of the screen.
+Shift + Print - Take a screenshot of a region.
+Control + Print - Take a screenshot of a window.
+Super + Shift + L - Lock the screen.
+Super + Space - Change between keyboard layouts.
+Super + Shift + End - Power off the PC.
+Super + Shift + Home - Restart the PC.
+Super + Shift + P - Set the power profile to performance.
+Super + Shift + B -Set the power profile to balanced.
+Super + Shift + S - Set the power profile to power-saving.
+Super + Escape - Launch the task manager.
+Super + K - Launch the editor(TUI).
+Super + C - Launch the configuration file picker.
+Super + Shift + C - Launch a basic terminal calculator.
+Super + (1-0) - Move focus to the workspace (1-10).
+Super + Shift + (1-0) - Move the focused window to the workspace (1-10).
+Super + Scroll - Cycle through workspaces.
+Super + DragWindow - Drags the window.
+Super + Shift + L - Launches keybindings list.
