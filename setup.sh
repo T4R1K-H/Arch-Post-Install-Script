@@ -47,7 +47,6 @@ fi
 # Get script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="$SCRIPT_DIR/configs"
-BASHRC_FILE="$SCRIPT_DIR/.bashrc"
 
 # Welcome message
 echo ""
@@ -61,11 +60,6 @@ echo ""
 # Verify required directories exist
 if [ ! -d "$CONFIG_DIR" ]; then
     print_error "configs directory not found at $CONFIG_DIR"
-    exit 1
-fi
-
-if [ ! -f "$BASHRC_FILE" ]; then
-    print_error ".bashrc file not found at $BASHRC_FILE"
     exit 1
 fi
 
@@ -377,12 +371,48 @@ fi
 # Copy configuration files
 print_message "Copying configuration files..."
 
-# Copy .bashrc to home directory
-print_message "Copying .bashrc (will overwrite if exists)..."
-if ! cp -f "$BASHRC_FILE" "$HOME/.bashrc"; then
-    print_error "Failed to copy .bashrc"
+# Create .bashrc in home directory
+print_message "Creating .bashrc (will overwrite if exists)..."
+cat > "$HOME/.bashrc" << 'EOF'
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias rg='rg -S'
+PS1='[\u@\h \W]\$ '
+alias hx=helix
+alias i='paru -S'
+alias u='paru -Syu'
+alias r='paru -Rns'
+alias sr='paru -Ss'
+alias ss='paru -Q | rg'
+alias news='paru -Pww'
+
+# Initialize starship prompt
+eval "$(starship init bash)"
+
+# Set default editor
+export EDITOR="/usr/bin/helix"
+export VISUAL="/usr/bin/helix"
+
+# Initialize fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+# Initialize zoxide (smart cd) - must be at the end
+eval "$(zoxide init bash)"
+EOF
+
+if [ $? -ne 0 ]; then
+    print_error "Failed to create .bashrc"
     exit 1
 fi
+
+print_message ".bashrc created successfully!"
 
 # Create .config directory if it doesn't exist
 mkdir -p "$HOME/.config"
