@@ -131,7 +131,7 @@ Arch-Setup/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/arch-setup.git
+git clone https://github.com/T4R1K-H/Starch.git
 cd arch-setup
 ```
 
