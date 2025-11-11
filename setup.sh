@@ -422,6 +422,17 @@ alias sr='paru -Ss'
 alias ss='paru -Q | rg'
 alias news='paru -Pww'
 
+# Open helix file explorer
+alias e='hx "$(find | fzf --preview "cat {}")"'
+
+# Set shell keybidnings to vim keybindings
+set -o vi
+
+#Make directory/ies and cd in to the last directory
+mcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
 # Initialize starship prompt
 eval "$(starship init bash)"
 
