@@ -59,7 +59,7 @@ This script is designed to be run **immediately after a minimal Arch Linux insta
 - **udiskie** - Automatic USB mounting
 - **brightnessctl** - Brightness control
 - **power-profiles-daemon** - Power management
-- **firewalld** - Firewall
+- **UFW** - Firewall
 
 ### File Management
 - **thunar** - GUI file manager
@@ -78,6 +78,12 @@ This script is designed to be run **immediately after a minimal Arch Linux insta
 - **fd** - User-friendly find alternative
 - **btop** - System monitor
 - **fastfetch** - System information
+- **lazygit** - Terminal UI for git commands
+
+### Applications
+- Steam
+- Vivaldi
+- Xournalpp (note-taking)
 
 ### Applications (Flatpak)
 - Discord
@@ -94,7 +100,6 @@ This script is designed to be run **immediately after a minimal Arch Linux insta
 - **OpenTabletDriver** - Graphics tablet support
 - **Gamescope** - Gaming compositor
 - **nwg-look** - GTK theme manager
-- **Xournalpp** - Note-taking
 - **Okular** - Document viewer
 - **GNOME Disk Utility**
 - **JDK 21** - Java development kit
