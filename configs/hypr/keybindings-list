@@ -5,9 +5,9 @@ Super + H - Move the window focus to the left.
 Super + K - Move the window focus upward. 
 Super + J - Move the window focus downward. 
 Super + M - Log out of the session.
-Shift + E - Launch the TUI file manager.
-Shift + A - Launches Audio settings.
+Super + E - Launch the TUI file manager.
 Super + Shift + E - Launch the GUI file manager.
+Super + A - Launches Audio settings.
 Super + B - Launch the browser.
 Super + X - Launch Xournal++ (hand note-taking app).
 Super + F - Toggle fullscreen.
