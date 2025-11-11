@@ -234,6 +234,7 @@ PACKAGES=(
     resvg
     imagemagick
     fd
+    vivaldi
     okular
     lxappearance
     jdk21-openjdk
