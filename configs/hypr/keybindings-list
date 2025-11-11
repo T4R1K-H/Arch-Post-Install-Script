@@ -26,7 +26,7 @@ Super + Shift + P - Set the power profile to performance.
 Super + Shift + B -Set the power profile to balanced.
 Super + Shift + S - Set the power profile to power-saving.
 Super + Escape - Launch the task manager.
-Super + K - Launch the editor(TUI).
+Super + Shift + K - Launch the editor(TUI).
 Super + C - Launch the configuration file picker.
 Super + Shift + C - Launch a basic terminal calculator.
 Super + (1-0) - Move focus to the workspace (1-10).
