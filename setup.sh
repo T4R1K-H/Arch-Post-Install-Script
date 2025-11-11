@@ -440,8 +440,8 @@ mcd() {
 eval "$(starship init bash)"
 
 # Set default editor
-export EDITOR="/usr/bin/helix"
-export VISUAL="/usr/bin/helix"
+export EDITOR="/usr/sbin/helix"
+export VISUAL="/usr/sbin/helix"
 
 # Initialize fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
