@@ -320,15 +320,18 @@ if [ "$GPU_TYPE" != "none" ]; then
             sudo sh -c 'echo "options nvidia-drm modeset=1" > /etc/modprobe.d/nvidia.conf'
             
             # Add nvidia modules to mkinitcpio
+            print_message "Adding NVIDIA modules to mkinitcpio..."
             if grep -q "^MODULES=" /etc/mkinitcpio.conf; then
-                sudo sed -i 's/^MODULES=.*/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
+                sudo sed -i 's/^MODULES=([^)]*/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm/' /etc/mkinitcpio.conf
             else
-                echo "MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)" | sudo tee -a /etc/mkinitcpio.conf
+                sudo sed -i '/^#MODULES=/a MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)' /etc/mkinitcpio.conf
             fi
             
             # Regenerate initramfs
             print_message "Regenerating initramfs..."
-            sudo mkinitcpio -P
+            if ! sudo mkinitcpio -P; then
+                print_warning "Failed to regenerate initramfs. You may need to run 'sudo mkinitcpio -P' manually after reboot."
+            fi
             
             print_message "NVIDIA GPU drivers installed and configured successfully!"
             print_warning "IMPORTANT: You may need to add 'nvidia-drm.modeset=1' to your kernel parameters"
